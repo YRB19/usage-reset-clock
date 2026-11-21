@@ -1,0 +1,52 @@
+{
+  "name": "usage-reset-clock",
+  "version": "1.0.0",
+  "description": "Dependency-free reset countdowns, recurring usage windows, and Retry-After parsing.",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test",
+    "demo": "npm run build && node examples/demo.mjs",
+    "prepack": "npm test"
+  },
+  "keywords": [
+    "reset",
+    "countdown",
+    "rate-limit",
+    "retry-after",
+    "usage",
+    "typescript"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
